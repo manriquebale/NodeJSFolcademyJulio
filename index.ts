@@ -16,9 +16,10 @@ app.use('/users', userRoutes);
 var authRoutes = require('./auth/auth.routes');
 app.use('/auth', authRoutes);
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT as unknown as number || 3000
 const host = process.env.HOST || '0.0.0.0'
+
 // Ponemos a escuchar correr nuestra app de express
-app.listen(port,() => {
+app.listen(port, host, () => {
     console.info('Servidor escuchando en http://localhost:' + port) })
 
