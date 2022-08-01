@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_URI = 'mongodb://localhost:27017/test'
-mongoose.connect(DB_URI, { useNewUrlParser: true }, (err: any) => {
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true }, (err: any) => {
     if (err) {
         console.log('Hubo un error en la conexión')
     } else {
